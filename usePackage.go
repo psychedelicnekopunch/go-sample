@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"go-sample/models"
-	modelsSample "go-sample/models"
-	. "go-sample/models"
-	"go-sample/models2"
+	"go-sample/sample"
+	sampleTest "go-sample/sample"
+	. "go-sample/sample"
+	"go-sample/sample2"
 )
 
 func FuncSample() {
@@ -13,11 +13,10 @@ func FuncSample() {
 }
 
 func main() {
-	models.Func()
-	modelsSample.Func()
+	sample.Func()
+	sampleTest.Func()
 	Func2()
-	models2.Func3()
-	models2.FuncSample()
+	sample2.Func3()
+	sample2.FuncSample()
 	FuncSample()
 }
-

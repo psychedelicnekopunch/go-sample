@@ -1,30 +1,78 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"errors"
+	"reflect"
+)
 
 type BadRequestError struct {
 	Message string
 	Code int
 }
 
+type NotFoundError struct {
+	Message string
+	Code int
+}
+
+type ServerError struct {
+	Message string
+	Code int
+}
 
 func (req BadRequestError) Error() string {
 	return fmt.Sprintf("%v: %v", req.Message, req.Code)
 }
 
-
-func Returns(num int) (int, error) {
-	if num < 0 {
-		return -1, BadRequestError{ "num is required", 400 }
-	}
-	return num, nil
+func (req NotFoundError) Error() string {
+	return fmt.Sprintf("%v: %v", req.Message, req.Code)
 }
 
-func main() {
-	res, err := Returns(1);
+func (req ServerError) Error() string {
+	return fmt.Sprintf("%v: %v", req.Message, req.Code)
+}
+
+
+func StatusCodes(num int) (int, error) {
+	switch num {
+	case 200:
+		return num, nil
+	case 400:
+		return num, BadRequestError{ "num is bad request", 400 }
+	case 404:
+		return num, NotFoundError{ "num is not found", 404 }
+	case 500:
+		return num, ServerError{ "num is server error", 500 }
+	default:
+		return num, errors.New("unknown error")
+	}
+}
+
+
+func Returns(res int, err error) {
 	if err != nil {
-		fmt.Printf("%v", err)
+		switch err.(type) {
+		case BadRequestError:
+			fmt.Printf("BadRequestError<%v>: %v", reflect.TypeOf(err), err)
+		case NotFoundError:
+			fmt.Printf("NotFoundError<%v>: %v", reflect.TypeOf(err), err)
+		case ServerError:
+			fmt.Printf("ServerError<%v>: %v", reflect.TypeOf(err), err)
+		default:
+			fmt.Printf("Error<%v>: %v", reflect.TypeOf(err), err)
+		}
 		return
 	}
-	fmt.Printf("%v", res)
+	if res == 200 {
+		fmt.Printf("Success: %v", res)
+	} else {
+		fmt.Printf("Unknown: %v", res)
+	}
+}
+
+
+func main() {
+	res, err := StatusCodes(404);
+	Returns(res, err)
 }

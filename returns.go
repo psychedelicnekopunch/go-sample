@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"errors"
-	"reflect"
 )
 
 type BadRequestError struct {
@@ -54,13 +53,13 @@ func Returns(res int, err error) {
 	if err != nil {
 		switch err.(type) {
 		case BadRequestError:
-			fmt.Printf("BadRequestError<%v>: %v", reflect.TypeOf(err), err)
+			fmt.Printf("BadRequestError<%T>: %v", err, err)
 		case NotFoundError:
-			fmt.Printf("NotFoundError<%v>: %v", reflect.TypeOf(err), err)
+			fmt.Printf("NotFoundError<%T>: %v", err, err)
 		case ServerError:
-			fmt.Printf("ServerError<%v>: %v", reflect.TypeOf(err), err)
+			fmt.Printf("ServerError<%T>: %v", err, err)
 		default:
-			fmt.Printf("Error<%v>: %v", reflect.TypeOf(err), err)
+			fmt.Printf("Error<%T>: %v", err, err)
 		}
 		return
 	}

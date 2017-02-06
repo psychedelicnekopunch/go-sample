@@ -49,7 +49,7 @@ func StatusCodes(num int) (int, error) {
 }
 
 
-func Returns(res int, err error) {
+func SendResponse(res int, err error) {
 	if err != nil {
 		switch err.(type) {
 		case BadRequestError:
@@ -73,5 +73,5 @@ func Returns(res int, err error) {
 
 func main() {
 	res, err := StatusCodes(404);
-	Returns(res, err)
+	SendResponse(res, err)
 }

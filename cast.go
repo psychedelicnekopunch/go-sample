@@ -22,8 +22,14 @@ func (c *Cast) strToBool(str string) {
 }
 
 
-func (c *Cast)  Atoi(str string) {
+func (c *Cast) Atoi(str string) {
 	fmt.Print(strconv.Atoi(str))
+	fmt.Printf("\n")
+}
+
+
+func (c *Cast) Itoa(i int) {
+	fmt.Print(strconv.Itoa(i))
 	fmt.Printf("\n")
 }
 
@@ -45,4 +51,9 @@ func main() {
 	cast.Atoi("a")// 0 strconv.Atoi: parsing "a": invalid syntax
 	cast.Atoi("01")// 1 <nil>
 	cast.Atoi("-1")// -1 <nil>
+
+	fmt.Printf("[int to string]\n")
+	cast.Itoa(-10)
+	cast.Itoa(001)
+	cast.Itoa(10.0)
 }

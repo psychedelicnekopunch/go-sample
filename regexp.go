@@ -17,12 +17,14 @@ func NewRegexp() *Regexp {
 
 
 func (r *Regexp) Password() *regexp.Regexp {
-	return regexp.MustCompile(`(?i)^[a-z0-9]+$`)
+	reg := `(?i)^[a-z0-9]+$`
+	return regexp.MustCompile(reg)
 }
 
 
 func (r *Regexp) Email() *regexp.Regexp {
-	return regexp.MustCompile(`(?i)^[0-9a-z].[0-9a-z-._]+@[0-9a-z].[0-9a-z-._]+[0-9a-z]+$`)
+	reg := `(?i)^[0-9a-z].[0-9a-z-._]+@[0-9a-z].[0-9a-z-._]+[0-9a-z]+$`
+	return regexp.MustCompile(reg)
 }
 
 

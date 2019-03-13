@@ -18,4 +18,7 @@ func main() {
 
 	test = new(Test)
 	fmt.Print(test)// &{0}
+
+	var test2 Test
+	fmt.Print(test2)
 }

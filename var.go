@@ -20,5 +20,5 @@ func main() {
 	fmt.Print(test)// &{0}
 
 	var test2 Test
-	fmt.Print(test2)
+	fmt.Print(test2)// {0}
 }

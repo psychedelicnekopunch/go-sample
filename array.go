@@ -16,6 +16,10 @@ type MapSample struct {
 }
 
 
+func (m *SliceSample) Set(value string) {
+	m.List = append(m.List, value)
+}
+
 // スライスの要素は削除できないので新しく作り直す
 func (s *SliceSample) Remove(index int) {
 	res := []string{}
@@ -28,14 +32,12 @@ func (s *SliceSample) Remove(index int) {
 	s.List = res
 }
 
-
 func (m *MapSample) Set(key string, value int) {
 	if m.List == nil {
 		m.List = map[string]int{}
 	}
 	m.List[key] = value
 }
-
 
 func (m *MapSample) Remove(key string) {
 	delete(m.List, key)
@@ -55,12 +57,12 @@ func main() {
 	print(ss.List)
 
 	// 追加
-	ss.List = append(ss.List, "test")
+	ss.Set("test")
 	print(ss.List)
 
 	// さらに追加
-	ss.List = append(ss.List, "test2")
-	ss.List = append(ss.List, "test3")
+	ss.Set("test2")
+	ss.Set("test3")
 
 	// 削除
 	ss.Remove(0)

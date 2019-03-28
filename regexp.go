@@ -5,7 +5,6 @@ package main
 import (
 	"fmt"
 	"regexp"
-	"unicode/utf8"
 )
 
 
@@ -34,6 +33,13 @@ func (r *RegexpSample) Image() *regexp.Regexp {
 	return regexp.MustCompile(reg)
 }
 
+
+func (r *RegexpSample) Hello() *regexp.Regexp {
+	reg := `(?i)^hello+$`
+	return regexp.MustCompile(reg)
+}
+
+
 func main() {
 	reg := NewRegexpSample()
 
@@ -60,4 +66,9 @@ func main() {
 	fmt.Print(regImage.MatchString("The Velvet Underground & Nico.jpg"), "\n")// true
 	fmt.Print(regImage.MatchString("Nicojpg"), "\n")// false
 	fmt.Print(regImage.MatchString("Nico.gifjpg"), "\n")// alse
+
+	regHello := reg.Hello()
+	fmt.Print("> Hello: ")
+	fmt.Println(regHello)
+	fmt.Print(regHello.MatchString("HELLO"), "\n")// true
 }

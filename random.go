@@ -19,9 +19,12 @@ type Random struct {
 
 func NewRandom() *Random {
 	r := new(Random)
-	r.MaxRange = 50
-	r.MinRange = 40
-	r.Value = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	// r.MaxRange = 50
+	// r.MinRange = 40
+	r.MaxRange = 8
+	r.MinRange = 8
+	// r.Value = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	r.Value = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789"
 	return r
 }
 

@@ -23,12 +23,15 @@ func main() {
 	}
 	defer copyTo.Close()
 
-	// _, err = io.Copy(copyTo, file)
+	_, err = io.Copy(copyTo, file)
 
-	// if err != nil {
-	// 	fmt.Printf(err.Error())
-	// 	return
-	// }
+	if err != nil {
+		fmt.Printf(err.Error())
+		if err := os.Remove("images/sample_copy.png"); err != nil {
+			fmt.Printf(err.Error())
+		}
+		return
+	}
 
     fmt.Printf("copied\n")
 }

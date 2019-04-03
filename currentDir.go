@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	currentPath, _ := os.Getwd()
-	fmt.Print(currentPath)
+	currentDir, _ := os.Getwd()
+	fmt.Print(currentDir)
 }

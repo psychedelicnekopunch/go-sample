@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"go-sample/sample"
-	sampleTest "go-sample/sample"
-	. "go-sample/sample"
-	"go-sample/sample2"
+	"psychedelicnekopunch/go-sample/sample"
+	sampleTest "psychedelicnekopunch/go-sample/sample"
+	. "psychedelicnekopunch/go-sample/sample"
+	"psychedelicnekopunch/go-sample/sample2"
 )
 
 func FuncSample() {

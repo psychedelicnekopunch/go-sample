@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-sample/models"
+	"psychedelicnekopunch/go-sample/models"
 )
 
 func main() {

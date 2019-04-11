@@ -1,4 +1,6 @@
 vendor
 
 images/sample_copy.png
+infrastructure/Config.go
+
 !.gitkeep

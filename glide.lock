@@ -1,6 +1,47 @@
-hash: 9f9b2271eadff155bb632ae8d0983673f2051b8614cd86c298b0a9f51dcd1dd6
-updated: 2019-04-04T11:03:23.376172138+09:00
+hash: 3e2b3320163d4b5815d8b35f2d501b200548464a85802e5269b8d5219bff2d26
+updated: 2019-04-10T18:57:03.147158207+09:00
 imports:
+- name: github.com/aws/aws-sdk-go
+  version: 56c1def75689cceec1fa6f14c2eedb4b798827f9
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/processcreds
+  - aws/credentials/stscreds
+  - aws/csm
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - internal/ini
+  - internal/s3err
+  - internal/sdkio
+  - internal/sdkrand
+  - internal/sdkuri
+  - internal/shareddefaults
+  - private/protocol
+  - private/protocol/eventstream
+  - private/protocol/eventstream/eventstreamapi
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/restxml
+  - private/protocol/xml/xmlutil
+  - service/s3
+  - service/s3/s3iface
+  - service/s3/s3manager
+  - service/sts
+- name: github.com/jmespath/go-jmespath
+  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
 - name: github.com/robfig/cron
   version: b41be1df696709bb6395fe435af20370037c0b4c
 testImports: []

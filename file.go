@@ -33,5 +33,5 @@ func main() {
 		return
 	}
 
-    fmt.Printf("copied\n")
+	fmt.Printf("copied\n")
 }

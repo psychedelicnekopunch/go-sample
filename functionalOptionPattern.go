@@ -28,5 +28,3 @@ func main() {
     sample2 := NewSample(setVal("test"))
     fmt.Print(sample2)
 }
-
-

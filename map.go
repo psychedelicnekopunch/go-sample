@@ -15,6 +15,7 @@ func print(v interface{}) {
 
 type User struct {
 	ID int
+	Name string
 }
 
 
@@ -33,4 +34,17 @@ func main() {
 	sample2["ID"] = 2
 	sample2["Name"] = "test2"
 	print(sample2)
+
+
+	IDs := map[int]*User{}
+
+	if IDs[10] == nil {
+		IDs[10] = &User{
+			ID: 10,
+			Name: "test",
+		}
+	}
+
+	print(IDs)
+	print(IDs[10].Name)
 }

@@ -36,6 +36,7 @@ func main() {
 	print(sample2)
 
 
+	// var IDs map[int]*User
 	IDs := map[int]*User{}
 
 	if IDs[10] == nil {
@@ -47,4 +48,8 @@ func main() {
 
 	print(IDs)
 	print(IDs[10].Name)
+
+
+	Nums := map[int]int{}
+	print(Nums[0])
 }

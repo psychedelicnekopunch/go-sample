@@ -1,8 +1,8 @@
-hash: 3e2b3320163d4b5815d8b35f2d501b200548464a85802e5269b8d5219bff2d26
-updated: 2019-04-10T18:57:03.147158207+09:00
+hash: 9b6a583361b2b41e698191df8dfa0dadae2decaa1a29a97c5e939e43f124fd20
+updated: 2019-04-26T20:40:30.740075171+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
-  version: 56c1def75689cceec1fa6f14c2eedb4b798827f9
+  version: 2024b98be3d7bca1d26036f16ef34b0275ebb562
   subpackages:
   - aws
   - aws/awserr
@@ -40,8 +40,20 @@ imports:
   - service/s3/s3iface
   - service/s3/s3manager
   - service/sts
+- name: github.com/go-sql-driver/mysql
+  version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/jinzhu/gorm
+  version: e3987fd4b803c16497aa4dfd2e75db7a6a061a4e
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
 - name: github.com/jmespath/go-jmespath
   version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
 - name: github.com/robfig/cron
   version: b41be1df696709bb6395fe435af20370037c0b4c
+- name: google.golang.org/appengine
+  version: 54a98f90d1c46b7731eb8fb305d2a321c30ef610
+  subpackages:
+  - cloudsql
 testImports: []

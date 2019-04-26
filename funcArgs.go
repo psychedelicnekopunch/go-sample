@@ -6,11 +6,6 @@ import (
 )
 
 
-type Sample struct {
-	Val string
-}
-
-
 func testFunc(value string, values ...string) {
 	fmt.Print(value + " ======== \n")
 	fmt.Print(values)

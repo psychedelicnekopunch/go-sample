@@ -5,7 +5,7 @@ package infrastructure
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	// _ "github.com/go-sql-driver/mysql"
+	// _ "github.com/go-sql-driver/mysql" ← こっちでも動く
 )
 
 
@@ -19,26 +19,20 @@ type DB struct {
 
 
 func NewDB() *DB {
-
 	c := NewConfig()
-
-	db := &DB{
+	return newDB(&DB{
 		Host: c.DB.Production.Host,
 		Username: c.DB.Production.Username,
 		Password: c.DB.Production.Password,
 		DBName: c.DB.Production.DBName,
-	}
-
-	db.Connect = db.connect()
-
-	return db
+	})
 }
 
 /**
  * func Open(dialect string, args ...interface{}) (db *DB, err error)
  * https://godoc.org/github.com/jinzhu/gorm#Open
  */
-func (d *DB) connect() *gorm.DB {
+func newDB(d *DB) *DB {
 	//
 	// ex) MySQL
 	// https://github.com/go-sql-driver/mysql#examples
@@ -49,7 +43,8 @@ func (d *DB) connect() *gorm.DB {
 	if err != nil {
 		panic(err.Error())
 	}
-	return db
+	d.Connect = db
+	return d
 }
 
 

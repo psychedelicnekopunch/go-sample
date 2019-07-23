@@ -24,7 +24,7 @@ func NewRandom() *Random {
 	r.MaxRange = 8
 	r.MinRange = 8
 	// r.Value = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-	r.Value = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789"
+	r.Value = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 	return r
 }
 

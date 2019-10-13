@@ -79,3 +79,15 @@ func (db *DB) Save(value interface{}) *gorm.DB {
 func (db *DB) Where(query interface{}, args ...interface{}) *gorm.DB {
 	return db.Connect.Where(query, args...)
 }
+
+func (db *DB) Begin() *gorm.DB {
+	return db.Connect.Begin()
+}
+
+func (db *DB) Commit() *gorm.DB {
+	return db.Connect.Commit()
+}
+
+func (db *DB) Rollback() *gorm.DB {
+	return db.Connect.Rollback()
+}

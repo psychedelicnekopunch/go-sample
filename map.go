@@ -36,7 +36,7 @@ func main() {
 	print(sample2)
 
 
-	// var IDs map[int]*User
+	// var IDs map[int]*User // panic: assignment to entry in nil map
 	IDs := map[int]*User{}
 	print(IDs)
 
@@ -68,4 +68,10 @@ func main() {
 
 	Nums := map[int]int{}
 	print(Nums[0])
+
+
+	// panic: assignment to entry in nil map
+	// s := "test"
+	// var p map[int]*string
+	// p[0] = &s
 }

@@ -27,7 +27,6 @@ func convert(integer int) {
 	res := ""
 	i2 := 0
 	for i := cnt; i >= 0; i-- {
-		str = fmt.Sprintf("0%s", str)
 		// fmt.Print(i2 % 3)
 		if i2 > 2 && i2 % 3 == 0 {
 			res = fmt.Sprintf(",%s", res)

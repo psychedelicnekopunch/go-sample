@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd `dirname $0`
+d=`pwd`
+
+source $d/config
+
+echo "user: '"$USER"', password: '"$PASSWORD"'"

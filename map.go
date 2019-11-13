@@ -71,9 +71,8 @@ func main() {
 
 
 	// panic: assignment to entry in nil map
-	s := "test"
-	var test map[int]*string
-	// test = map[int]*string{}
-	// test := map[int]*string{}
-	test[0] = &s
+	var test map[int]string
+	// test = map[int]string{}
+	// test := map[int]string{}
+	test[0] = "test"
 }

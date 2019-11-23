@@ -21,4 +21,10 @@ func main() {
 
 	var test2 Test
 	fmt.Print(test2)// {0}
+
+	var t int
+	t = 0
+
+	var _ int
+	_ = 0
 }

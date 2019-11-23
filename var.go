@@ -22,9 +22,14 @@ func main() {
 	var test2 Test
 	fmt.Print(test2)// {0}
 
-	var t int
-	t = 0
+	var test3 int
+	test3 = 0
 
 	var _ int
 	_ = 0
+
+	test4 := *Test{}
+
+	var test5 *int
+	test5 = test3
 }

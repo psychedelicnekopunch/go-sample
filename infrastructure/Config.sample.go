@@ -18,6 +18,9 @@ package infrastructure
 // 			DBName string
 // 		}
 // 	}
+// 	Slack struct {
+// 		APIToken string
+// 	}
 // }
 
 // func NewConfig() *Config {
@@ -33,6 +36,8 @@ package infrastructure
 // 	c.DB.Production.Username = "username"
 // 	c.DB.Production.Password = "password"
 // 	c.DB.Production.DBName = "dbname"
+
+// 	c.Slack.APIToken = "SLACK_API_TOKEN"
 
 // 	return c
 // }

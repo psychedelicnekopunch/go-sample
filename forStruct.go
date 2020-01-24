@@ -38,4 +38,9 @@ func main() {
 		// fmt.Print(elem.Field(i).Interface())
 		fmt.Print("\n")
 	}
+
+	// cannot range over test (type *Test)
+	// for _, t := range test {
+	// 	fmt.Print(t)
+	// }
 }

@@ -29,4 +29,14 @@ func main() {
 	// test
 	// 概要です
 	// 注意事項です
+
+	var lists []struct {
+		ID int `json:"id"`
+		Title string `json:"title"`
+	}
+
+	strs := `[{"id":1,"title":"test"},{"id":2,"title":"test2"},{"id":3,"title":"test3"}]`
+	dec2 := json.NewDecoder(strings.NewReader(strs))
+	dec2.Decode(&lists)
+	fmt.Print(lists)
 }

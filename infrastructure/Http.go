@@ -60,16 +60,16 @@ func (p *Http) Get(URL string, params map[string]string) (body string, err error
 
 func (p *Http) Post(URL string, params map[string]string) (body string, err error) {
 
-	request, err := http.NewRequest("POST", URL, strings.NewReader(values.Encode()))
-
-	if err != nil {
-		return "", err
-	}
-
 	values := url.Values{}
 
 	for key, param := range params {
 		values.Add(key, param)
+	}
+
+	request, err := http.NewRequest("POST", URL, strings.NewReader(values.Encode()))
+
+	if err != nil {
+		return "", err
 	}
 
 	request.Header.Add("Content-Type", "application/x-www-form-urlencoded")

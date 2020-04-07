@@ -16,4 +16,7 @@ func main() {
 	fmt.Print("\n")
 	fmt.Print(math.Floor(f * 100))
 	fmt.Print("\n")
+
+	fmt.Printf("%.1f\n", f)
+	fmt.Printf("%.3f\n", f)
 }

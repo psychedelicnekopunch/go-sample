@@ -8,5 +8,7 @@ import (
 
 
 func main() {
-	fmt.Printf("%d\n", int(math.Ceil(1.1)))
+	var i float64 = 1.1
+	fmt.Printf("%d\n", int(math.Ceil(i)))
+	fmt.Printf("%d\n", int(i))
 }

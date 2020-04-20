@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"psychedelicnekopunch/go-sample/infrastructure"
+	"github.com/psychedelicnekopunch/go-sample/infrastructure"
 )
 
 

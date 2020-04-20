@@ -3,7 +3,7 @@ package a
 
 
 import (
-	"psychedelicnekopunch/go-sample/importcycle/b"
+	"github.com/psychedelicnekopunch/go-sample/importcycle/b"
 )
 
 

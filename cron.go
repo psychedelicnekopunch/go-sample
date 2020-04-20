@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/robfig/cron"
+	"github.com/robfig/cron/v3"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"psychedelicnekopunch/go-sample/infrastructure"
+	"github.com/psychedelicnekopunch/go-sample/infrastructure"
 )
 
 func main() {

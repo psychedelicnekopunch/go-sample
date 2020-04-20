@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	"psychedelicnekopunch/go-sample/importcycle/a"
+	"github.com/psychedelicnekopunch/go-sample/importcycle/a"
 )
 
 func main() {

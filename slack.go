@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 
-	"psychedelicnekopunch/go-sample/infrastructure"
+	"github.com/psychedelicnekopunch/go-sample/infrastructure"
 )
 
 

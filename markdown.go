@@ -24,9 +24,17 @@ func main() {
 
 this is markdown.
 hello, world.
+
+https://github.com/psychedelicnekopunch/go-sample
+
+[go-sample](https://github.com/psychedelicnekopunch/go-sample)
 `
 
-	output := blackfriday.Run([]byte(s), blackfriday.WithExtensions(blackfriday.HardLineBreak))
+	renderer := blackfriday.NewHTMLRenderer(blackfriday.HTMLRendererParameters{
+		Flags: blackfriday.HrefTargetBlank,
+	})
+	// output := blackfriday.Run([]byte(s), blackfriday.WithExtensions(blackfriday.HardLineBreak), blackfriday.WithRenderer(renderer))
+	output := blackfriday.Run([]byte(s), blackfriday.WithExtensions(blackfriday.HardLineBreak + blackfriday.Autolink), blackfriday.WithRenderer(renderer))
 	html := bluemonday.UGCPolicy().SanitizeBytes(output)
 
 	fmt.Print(template.HTML(string(html)))

@@ -27,7 +27,8 @@ type Books struct {
 
 func main() {
 
-	db := infrastructure.NewDB()
+	d := infrastructure.NewDB()
+	db := d.Connect()
 
 	/**
 	 * Create: 作成

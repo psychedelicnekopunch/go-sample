@@ -28,9 +28,10 @@ type Books struct {
 
 func main() {
 
-	db := infrastructure.NewDB()
+	d := infrastructure.NewDB()
 
-	tx := db.Begin()
+	db := d.Connect()
+	tx := d.Begin()
 
 	/**
 	 * Create: 作成

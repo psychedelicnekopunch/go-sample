@@ -1,4 +1,3 @@
-
 package infrastructure
 
 
@@ -14,7 +13,7 @@ type DB struct {
 	Username string
 	Password string
 	DBName string
-	Connect *gorm.DB
+	Connection *gorm.DB
 }
 
 
@@ -27,6 +26,7 @@ func NewDB() *DB {
 		DBName: c.DB.Production.DBName,
 	})
 }
+
 
 /**
  * func Open(dialect string, args ...interface{}) (db *DB, err error)
@@ -43,51 +43,17 @@ func newDB(d *DB) *DB {
 	if err != nil {
 		panic(err.Error())
 	}
-	d.Connect = db
+	d.Connection = db
 	return d
 }
 
 
-func (db *DB) Create(value interface{}) *gorm.DB {
-	return db.Connect.Create(value)
-}
-
-func (db *DB) Exec(sql string, values ...interface{}) *gorm.DB {
-	return db.Connect.Exec(sql, values...)
-}
-
-func (db *DB) Find(out interface{}, where ...interface{}) *gorm.DB {
-	return db.Connect.Find(out, where...)
-}
-
-func (db *DB) First(out interface{}, where ...interface{}) *gorm.DB {
-	return db.Connect.First(out, where...)
-}
-
-func (db *DB) NewRecord(value interface{}) bool {
-	return db.Connect.NewRecord(value)
-}
-
-func (db *DB) Raw(sql string, values ...interface{}) *gorm.DB {
-	return db.Connect.Raw(sql, values...)
-}
-
-func (db *DB) Save(value interface{}) *gorm.DB {
-	return db.Connect.Save(value)
-}
-
-func (db *DB) Where(query interface{}, args ...interface{}) *gorm.DB {
-	return db.Connect.Where(query, args...)
-}
-
+// Begin begins a transaction
 func (db *DB) Begin() *gorm.DB {
-	return db.Connect.Begin()
+	return db.Connection.Begin()
 }
 
-func (db *DB) Commit() *gorm.DB {
-	return db.Connect.Commit()
-}
 
-func (db *DB) Rollback() *gorm.DB {
-	return db.Connect.Rollback()
+func (db *DB) Connect() *gorm.DB {
+	return db.Connection
 }

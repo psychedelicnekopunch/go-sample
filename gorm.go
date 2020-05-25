@@ -20,7 +20,8 @@ type Users struct {
 
 func main() {
 
-	db := infrastructure.NewDB()
+	d := infrastructure.NewDB()
+	db := d.Connect()
 
 	/**
 	 * 直接SQL文を書く

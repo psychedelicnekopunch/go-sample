@@ -39,7 +39,9 @@ func main() {
 
 	// string to date (Time)
 	dateStr := "2019/08/01 12:23:45"
-	t, err := time.Parse("2006/01/02 15:04:05", dateStr)
+	// t, err := time.Parse("2006/01/02 15:04:05", dateStr)
+	loc, _ := time.LoadLocation("Asia/Tokyo")
+	t, err := time.ParseInLocation("2006/01/02 15:04:05", dateStr, loc)
 	if err != nil {
 		fmt.Print(err.Error())
 		return

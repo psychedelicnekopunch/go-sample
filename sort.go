@@ -14,7 +14,8 @@ type Users struct {
 }
 
 
-type Lists [] Users
+// type Lists map[int]Users
+type Lists []Users
 
 
 func (l Lists) Len() int {
@@ -47,6 +48,15 @@ func main() {
 	lists = append(lists, Users{ ID: 3, Name: "test3" })
 	lists = append(lists, Users{ ID: 5, Name: "test5" })
 	lists = append(lists, Users{ ID: 4, Name: "test4" })
+	/*
+	lists[10] = Users{ ID: 1, Name: "test1" }
+	lists[21] = Users{ ID: 7, Name: "test7" }
+	lists[32] = Users{ ID: 2, Name: "test2" }
+	lists[43] = Users{ ID: 6, Name: "test6" }
+	lists[54] = Users{ ID: 3, Name: "test3" }
+	lists[65] = Users{ ID: 5, Name: "test5" }
+	lists[76] = Users{ ID: 4, Name: "test4" }
+	*/
 
 	fmt.Println(lists)
 

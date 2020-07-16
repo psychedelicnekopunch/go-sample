@@ -71,7 +71,8 @@ func main() {
 
 	for i := 0; i < 100; i++ {
 		user := Users{
-			ID: (i + 1) * 17,
+			// ID: (i + 1) * 17,
+			ID: (i + 1),
 			Name: random.Get(),
 		}
 		users = append(users, user)
@@ -108,6 +109,6 @@ func main() {
 
 	fmt.Print(len(selectedUsers))
 
-	// fmt.Println(users)
+	fmt.Println(users)
 	// fmt.Println(selectedUsersIndex)
 }

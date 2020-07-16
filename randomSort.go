@@ -71,11 +71,12 @@ func main() {
 
 	for i := 0; i < 100; i++ {
 		user := Users{
+			// ID: (i + 1) * 17,
 			ID: (i + 1),
 			Name: random.Get(),
 		}
 		users = append(users, user)
-		selectedUsersIndex[user.ID] = false
+		selectedUsersIndex[i] = false
 	}
 
 	selected := len(selectedUsersIndex)
@@ -88,11 +89,11 @@ func main() {
 			break
 		}
 		index := rand.New(source).Intn(cnt)
-		if selectedUsersIndex[users[index].ID] {
+		if selectedUsersIndex[index] {
 			continue
 		}
 		selectedUsers = append(selectedUsers, users[index])
-		selectedUsersIndex[users[index].ID] = true
+		selectedUsersIndex[index] = true
 	}
 
 	/*for userID, i := range selectedUsersIndex {
@@ -102,7 +103,7 @@ func main() {
 		fmt.Print(selectedUser, "\n")
 	}
 
-	fmt.Print(len(selectedUsers))
+	fmt.Print(len(selectedUsers), "\n")
 
 	fmt.Println(users)
 	// fmt.Println(selectedUsersIndex)

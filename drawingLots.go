@@ -4,7 +4,7 @@ package main
 
 import (
 	"fmt"
-	"math/rand"// https://golang.org/pkg/math/rand/
+	"math/rand"
 	"time"
 	"unicode/utf8"
 )
@@ -26,12 +26,9 @@ type Random struct {
 
 func NewRandom() *Random {
 	r := new(Random)
-	// r.MaxRange = 50
-	// r.MinRange = 40
 	r.MaxRange = 8
 	r.MinRange = 8
-	// r.Value = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-	r.Value = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+	r.Value = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	return r
 }
 
@@ -100,15 +97,11 @@ func main() {
 		selectedUsersIndex[index] = true
 	}
 
-	/*for userID, i := range selectedUsersIndex {
-		fmt.Println(userID, i)
-	}*/
 	for _, selectedUser := range selectedUsers {
 		fmt.Print(selectedUser, "\n")
 	}
 
 	fmt.Print(len(selectedUsers), "\n")
-
 	fmt.Println(users)
 	// fmt.Println(selectedUsersIndex)
 }

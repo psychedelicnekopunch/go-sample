@@ -68,6 +68,9 @@ func getUsers() (users []Users) {
 
 	for i := 0; i < 100; i++ {
 		num := rand.New(source).Intn(maxNumber)
+		// if num == 0 {
+		// 	num += 1
+		// }
 		user := Users{
 			ID: (i + 1),
 			Name: random.Get(),
@@ -84,14 +87,14 @@ func main() {
 	users := getUsers()
 	selectedUsersIndex := map[int]bool{}
 	selectedUsers := []Users{}
+	cnt := 0
 
 	for _, user := range users {
 		selectedUsersIndex[user.ID] = false
+		cnt += user.Number
 	}
 
 	selected := 50
-	cnt := len(selectedUsersIndex)
-
 	if cnt < selected {
 		selected = cnt
 	}
@@ -105,20 +108,33 @@ func main() {
 		if luckey == selected {
 			break
 		}
-		index := rand.New(source).Intn(cnt)
+		index := rand.New(source).Intn(len(selectedUsersIndex))
 		user := users[index]
 		if selectedUsersIndex[user.ID] {
 			continue
 		}
 		if maxNumber < user.Number {
+			// fmt.Print(luckey, "\n")
+			// fmt.Print(selected, "\n")
+			// fmt.Print("continue1", "\n")
+			// fmt.Print(maxNumber, "\n")
+			// fmt.Print(user.Number, "\n")
 			continue
 		}
 		if luckey + user.Number > selected {
-			maxNumber--
+			for {
+				maxNumber--
+				if luckey + maxNumber <= selected {
+					break
+				}
+			}
 			found := false
 			for _, user := range users {
 				if user.Number <= maxNumber {
-					found = true
+					if !selectedUsersIndex[user.ID] {
+						found = true
+						break
+					}
 				}
 			}
 			if !found {
@@ -130,6 +146,26 @@ func main() {
 		selectedUsersIndex[user.ID] = true
 		luckey += user.Number
 		fmt.Print(user.Number, "+")
+		if luckey + maxNumber > selected {
+			for {
+				maxNumber--
+				if luckey + maxNumber <= selected {
+					break
+				}
+			}
+			found := false
+			for _, user := range users {
+				if user.Number <= maxNumber {
+					if !selectedUsersIndex[user.ID] {
+						found = true
+						break
+					}
+				}
+			}
+			if !found {
+				break
+			}
+		}
 	}
 
 	fmt.Print("\n")
@@ -138,7 +174,7 @@ func main() {
 		fmt.Print(selectedUser, "\n")
 	}
 
-	fmt.Print(len(selectedUsers), "\n")
-	fmt.Println(luckey)
+	fmt.Print(len(selectedUsers), "users\n")
+	fmt.Print("sum: ", luckey)
 	// fmt.Println(selectedUsersIndex)
 }

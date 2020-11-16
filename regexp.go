@@ -40,6 +40,12 @@ func (r *RegexpSample) Hello() *regexp.Regexp {
 }
 
 
+func (r *RegexpSample) Google() *regexp.Regexp {
+	reg := `(?i) Error 400: `
+	return regexp.MustCompile(reg)
+}
+
+
 func main() {
 	reg := NewRegexpSample()
 
@@ -71,4 +77,9 @@ func main() {
 	fmt.Print("> Hello: ")
 	fmt.Println(regHello)
 	fmt.Print(regHello.MatchString("HELLO"), "\n")// true
+
+	regGoogle := reg.Google()
+	fmt.Print("> Google: ")
+	fmt.Println(regGoogle)
+	fmt.Print(regGoogle.MatchString("googleapi: Error 400: Precondition check failed., failedPrecondition"), "\n")// true
 }

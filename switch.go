@@ -37,6 +37,15 @@ func checkInt(i int) {
 }
 
 
+func test(i int) bool {
+	switch i {
+	case 1:
+		return true
+	}
+	return false
+}
+
+
 func main() {
 	checkStr("a")// -- this is A. end. --
 	checkStr("test")// -- default. --
@@ -45,4 +54,7 @@ func main() {
 	checkInt(1)// -- i < 5 end. --
 	checkInt(4)// -- i < 5 end. --
 	checkInt(7)// -- i < 10 end. --
+
+	fmt.Print(test(1), "\n")
+	fmt.Print(test(2), "\n")
 }

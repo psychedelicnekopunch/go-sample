@@ -52,8 +52,7 @@ func main() {
 	// unix (int) to date (Time)
 	unix := int64(1564662225)
 	t = time.Unix(unix, 0)
-	fmt.Print(t)
-	fmt.Print("\n")
+	fmt.Printf("%s\n", t.Format("2006/01/02 15:04"))
 
 	// date (Time) to unix (int64)
 	u := time.Now().Unix()

@@ -46,8 +46,7 @@ func main() {
 		fmt.Print(err.Error())
 		return
 	}
-	fmt.Print(t)
-	fmt.Print("\n")
+	fmt.Print(t, "\n")
 
 	// unix (int) to date (Time)
 	unix := int64(1564662225)
@@ -56,10 +55,16 @@ func main() {
 
 	// date (Time) to unix (int64)
 	u := time.Now().Unix()
-	fmt.Print(u)
-	fmt.Print("\n")
+	fmt.Print(u, "\n")
 
 	// date (Time) to string
 	s := time.Now().Format("2006.01.02(Mon) 15:04:05")
-	fmt.Print(s)
+	fmt.Print(s, "\n")
+
+
+	t2 := time.Now().In(loc).Format("2006.01.02")
+	fmt.Print(t2, "\n")
+
+	t3 := t.Format("2006/01/02")
+	fmt.Print(t3, "\n")
 }

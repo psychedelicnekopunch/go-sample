@@ -17,4 +17,13 @@ func main() {
 	for _, v := range arr {
 		fmt.Print(v + "\n")
 	}
+
+
+	str2 := "127.0.0.1:45634"
+	arr2 := []string{}
+	arr2 = strings.Split(str2, ":")
+
+	for i, v := range arr2 {
+		fmt.Print(i, ": ", v + "\n")
+	}
 }

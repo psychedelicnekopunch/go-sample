@@ -61,10 +61,12 @@ func main() {
 	s := time.Now().Format("2006.01.02(Mon) 15:04:05")
 	fmt.Print(s, "\n")
 
-
 	t2 := time.Now().In(loc).Format("2006.01.02")
 	fmt.Print(t2, "\n")
 
 	t3 := t.Format("2006/01/02")
 	fmt.Print(t3, "\n")
+
+	t4 := time.Now().In(loc).Format("20060102")
+	fmt.Print(t4, "\n")
 }

@@ -34,12 +34,15 @@ func main() {
 	arr1 := []rune(str1)
 	fmt.Println(arr1)
 
-	arr3 := []rune(str3)
+	arr3 := []rune(str3)[:50]
 	fmt.Println(arr3)
+	fmt.Print("\n===========\n")
 
 	for _, v := range arr1 {
 		fmt.Print(string(v), "|")
 	}
+
+	fmt.Print("\n===========\n")
 
 	for _, v := range arr3 {
 		fmt.Print(string(v), "|")

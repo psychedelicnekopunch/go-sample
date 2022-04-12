@@ -29,7 +29,7 @@ func main() {
 	fmt.Printf("%s (%d Words)(%d Byte)\n", str2, utf8.RuneCountInString(str2), len(str2))
 
 
-	str3 := "abc, 日本語です。 文字数制限LIMIT abc, 日本語です。 文字数制限LIMIT abc, 日本語です。 文字数制限LIMIT"
+	str3 := "abc, 日本語です 12345。 ✋　😄 💖 文字数制限LIMIT abc, 日本語です。 文字数制限LIMIT abc, 日本語です。 文字数制限LIMIT"
 
 	arr1 := []rune(str1)
 	fmt.Println(arr1)
@@ -44,4 +44,13 @@ func main() {
 	for _, v := range arr3 {
 		fmt.Print(string(v), "|")
 	}
+
+	limitStr3 := ""
+	for i, v := range arr3 {
+		if i == 29 {
+			break
+		}
+		limitStr3 = limitStr3 + string(v)
+	}
+	fmt.Print("\n==========\n", limitStr3, "\n==========\n")
 }

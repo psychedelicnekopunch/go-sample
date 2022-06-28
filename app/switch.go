@@ -57,4 +57,16 @@ func main() {
 
 	fmt.Print(test(1), "\n")
 	fmt.Print(test(2), "\n")
+
+	for i := 0; i < 10; i++ {
+		switch i {
+		case 2:
+			fmt.Print(i, ": 2\n")
+			// break
+		default:
+			fmt.Print(i, ": その他\n")
+			continue
+		}
+		break
+	}
 }

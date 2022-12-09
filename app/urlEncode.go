@@ -7,7 +7,7 @@ import (
 
 
 func main() {
-	str := "?q=test&❤️ 絵文字_ やゔぁぴぼ _ 空白 \" ' ? ! .xlsx .png ♡"
+	str := "?q=t%e%s%t&❤️ 絵+文¥字_ やゔ/ぁぴぼ _ 空白 \" ' ? ! .xlsx .png ♡"
 	fmt.Print(str, "\n\n")
 	fmt.Print(url.PathEscape(str), "\n\n")
 	fmt.Print(url.QueryEscape(str), "\n\n")

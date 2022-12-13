@@ -56,5 +56,5 @@ func (r *Random) Get() string {
 
 func main() {
 	random := NewRandom()
-	fmt.Print(random.Get())
+	fmt.Print(random.Get(), "\n")
 }

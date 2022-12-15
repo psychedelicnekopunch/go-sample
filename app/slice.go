@@ -12,32 +12,32 @@ type User struct {
 }
 
 
-
-func print(v interface{}) {
-	fmt.Print(v)
-	fmt.Print("\n")
-}
-
-
-
 func main() {
 	// その1
 	var sample []User
-	print(sample)
+	fmt.Print(sample, "\n")
 
 	sample = append(sample, User{
 		ID: 1,
 		Name: "test",
 	})
-	print(sample)
+	fmt.Print(sample, "\n")
 
 	// その2
 	sample2 := []User{}
-	print(sample2)
+	fmt.Print(sample2, "\n")
 
 	sample2 = append(sample2, User{
 		ID: 2,
 		Name: "test2",
 	})
-	print(sample2)
+	fmt.Print(sample2, "\n")
+
+
+	strs := []string{
+		"a",
+		"b",
+		"c",
+	}
+	fmt.Print(strs, "\n")
 }

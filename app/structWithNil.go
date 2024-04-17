@@ -17,7 +17,7 @@ type User struct {
 
 func main() {
 	u := User{}
-	fmt.Print(u)// {0 "" <nil> false}
+	fmt.Print(u, "\n")// {0 "" <nil> false}
 
 	// Profile に代入する時
 	profile := "プロフィール"
@@ -26,6 +26,6 @@ func main() {
 	// Profile を使う時
 	// nil チェックをしないとバグの原因になったりする
 	if u.Profile != nil {
-		fmt.Print(*u.Profile)// プロフィール
+		fmt.Print(*u.Profile, "\n")// プロフィール
 	}
 }

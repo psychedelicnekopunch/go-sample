@@ -69,4 +69,16 @@ func main() {
 		}
 		break
 	}
+
+
+	i := 1
+	switch i {
+	case 0:
+		fmt.Print(i, ": 0.....\n")
+	case 2:
+		fmt.Print(i, ": 2.....\n")
+	}
+
+	fmt.Print(i, ".....\n")
+
 }

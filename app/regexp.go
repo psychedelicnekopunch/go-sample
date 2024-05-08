@@ -23,7 +23,8 @@ func (r *RegexpSample) Password() *regexp.Regexp {
 
 
 func (r *RegexpSample) Email() *regexp.Regexp {
-	reg := `(?i)^[0-9a-z].[0-9a-z-._]+@[0-9a-z].[0-9a-z-._]+[0-9a-z]+$`
+	reg := `(?i)^[0-9a-z]+[0-9a-z-._]*[0-9a-z]+@[0-9a-z]+[0-9a-z-._]+[0-9a-z]+$`
+	// reg := `(?i)^[0-9a-z].[0-9a-z-._]+@[0-9a-z].[0-9a-z-._]+[0-9a-z]+$`
 	return regexp.MustCompile(reg)
 }
 
@@ -62,6 +63,7 @@ func main() {
 	regEmail := reg.Email()
 	fmt.Print("> Email: ")
 	fmt.Println(regEmail)
+	fmt.Print(regEmail.MatchString("me@gmail.com"), "\n")// true
 	fmt.Print(regEmail.MatchString("psychedelic.nekopunch@gmail.com"), "\n")// true
 	fmt.Print(regEmail.MatchString("psychedelic.nekopunch@yahoo.ne.jp"), "\n")// true
 	fmt.Print(regEmail.MatchString("psychedelic.nekopunch@r.vodafone.ne.jp"), "\n")// true

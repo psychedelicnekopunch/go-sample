@@ -12,12 +12,13 @@ func main() {
 	mapInts := map[int]int{}
 
 	for i := 0; i < 10; i++ {
-		mapInts[i + 1] = i + 1
+		mapInts[i * i] = i + 1
 	}
 	for i, v := range mapInts {
 		fmt.Print(i, " : ", v, "\n")
 	}
 
+	fmt.Print("========\n")
 
 	mapStrs := map[string]int{}
 	mapStrs["a"] = 1

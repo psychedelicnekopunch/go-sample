@@ -19,7 +19,7 @@ func main() {
 	// ----- //
 	// s := make([]int, 2)// panic: runtime error: index out of range [3] with length 3
 	s := make([]int, 3)
-	// s := make([]int, 3, 3)
+	// s := make([]int, 3, 5)
 	// s = append(s, 1000)
 	// s[0] = 1
 	// s[1] = 2

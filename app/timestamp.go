@@ -14,5 +14,7 @@ func main() {
 	fmt.Print("\n", t.Unix(), "\n")
 	fmt.Print("\n", t.Format("2006.01.02(Mon) 15:04:05.000"), "\n")
 	fmt.Print("\n", t.Nanosecond(), "\n")
-	fmt.Print("\n", time.Now().UTC().Format("2006.01.02(Mon) 15:04:05.000"), "\n")
+	// fmt.Print("\n", time.Now().UTC().Format("2006.01.02(Mon) 15:04:05.000"), "\n")
+	fmt.Print("\n", time.Now().UTC().Format("2006-01-02 15:04:05.000"), "\n")
+	fmt.Print("\n", time.Now().UTC().Format("20060102150405"), "\n")
 }

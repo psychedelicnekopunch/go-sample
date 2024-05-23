@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 
@@ -22,4 +23,7 @@ func main() {
 	b := false
 
 	fmt.Printf(fmt.Sprintf("\n\n%v\n%v\n%v\n%v\n", f, s, i, b))
+
+	fmt.Print(fmt.Sprintf("\n%s_%d\n", s, i))
+	fmt.Print(fmt.Sprintf("\n%d\n", time.Now().Unix()))
 }

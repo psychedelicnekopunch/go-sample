@@ -29,8 +29,10 @@ func main() {
 	var t Test
 	t2 := Test{}
 	t3 := Test{ ID: 1 }
+	t4 := Test{ ID: 0 }
 
 	fmt.Print("t == t2: ", t == t2, "\n")
 	fmt.Print("t == t3: ", t == t3, "\n")
+	fmt.Print("t == t4: ", t == t4, "\n")
 
 }

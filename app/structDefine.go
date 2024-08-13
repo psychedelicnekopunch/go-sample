@@ -39,7 +39,7 @@ func main() {
 			Last: "nekomura",
 		},
 	}
-	fmt.Print(p)
+	fmt.Print(p, "\n")
 
 
 	p2 := Person2{
@@ -49,5 +49,18 @@ func main() {
 			Last: "murata",
 		},
 	}
-	fmt.Print(p2)
+	fmt.Print(p2, "\n")
+
+
+
+	// var s struct {}
+	var s interface{}
+
+	s = struct {
+		ID int `json:"id"`
+	}{}
+
+	s.ID = 10
+
+	fmt.Print(s, "\n")
 }

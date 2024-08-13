@@ -23,7 +23,7 @@ func (r *RegexpSample) Password() *regexp.Regexp {
 
 
 func (r *RegexpSample) Email() *regexp.Regexp {
-	reg := `(?i)^[0-9a-z]+[0-9a-z-._]*[0-9a-z]+@[0-9a-z]+[0-9a-z-._]+[0-9a-z]+$`
+	reg := `(?i)^[0-9a-z-_]+[0-9a-z-._]*[0-9a-z-_]+@[0-9a-z]+[0-9a-z-.]+[0-9a-z]+$`
 	// reg := `(?i)^[0-9a-z].[0-9a-z-._]+@[0-9a-z].[0-9a-z-._]+[0-9a-z]+$`
 	return regexp.MustCompile(reg)
 }
@@ -47,6 +47,12 @@ func (r *RegexpSample) Google() *regexp.Regexp {
 }
 
 
+func (r *RegexpSample) CardholderName() *regexp.Regexp {
+	reg := `(?i)^[a-z]+[a-z ]*[a-z]+$`
+	return regexp.MustCompile(reg)
+}
+
+
 func main() {
 	reg := NewRegexpSample()
 
@@ -63,6 +69,7 @@ func main() {
 	regEmail := reg.Email()
 	fmt.Print("> Email: ")
 	fmt.Println(regEmail)
+	fmt.Print(regEmail.MatchString("-me_@gmail.com"), "\n")// true
 	fmt.Print(regEmail.MatchString("me@gmail.com"), "\n")// true
 	fmt.Print(regEmail.MatchString("psychedelic.nekopunch@gmail.com"), "\n")// true
 	fmt.Print(regEmail.MatchString("psychedelic.nekopunch@yahoo.ne.jp"), "\n")// true
@@ -84,4 +91,12 @@ func main() {
 	fmt.Print("> Google: ")
 	fmt.Println(regGoogle)
 	fmt.Print(regGoogle.MatchString("googleapi: Error 400: Precondition check failed., failedPrecondition"), "\n")// true
+
+	regCardholderName := reg.CardholderName()
+	fmt.Print("> CardholderName: ")
+	fmt.Println(regCardholderName)
+	fmt.Print(regCardholderName.MatchString("12wfwfe3 12wweed3"), "\n")// false
+	fmt.Print(regCardholderName.MatchString("abcdefg"), "\n")// true
+	fmt.Print(regCardholderName.MatchString("abcd efg"), "\n")// true
+	fmt.Print(regCardholderName.MatchString("ABCD EFG"), "\n")// true
 }

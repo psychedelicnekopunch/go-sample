@@ -1,0 +1,4 @@
+#!/bin/sh
+go mod tidy
+# realize s
+air -c .air.toml

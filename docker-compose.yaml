@@ -2,19 +2,27 @@
 version: "3"
 
 services:
-    app:
-        build:
-            context: .
-        volumes:
-            - ./app:/var/www/html
-            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    go-sample-app:
+        image: nginx:1.27.0-perl
         ports:
             - 8080:80
         tty: true
         depends_on:
-            - mysql
-            - phpmyadmin
-    mysql:
+            - go-sample-go
+            - go-sample-mysql
+            - go-sample-phpmyadmin
+        volumes:
+            - ./app:/var/www/html
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        working_dir: /var/www/html
+    go-sample-go:
+        build:
+            context: .
+            dockerfile: ./go/Dockerfile
+        volumes:
+            - ./app:/var/www/html
+        working_dir: /var/www/html
+    go-sample-mysql:
         image: mysql:8
         restart: always
         environment:
@@ -22,13 +30,13 @@ services:
             TZ: 'Asia/Tokyo'
         volumes:
             - ./mysql:/var/lib/mysql
-    phpmyadmin:
+    go-sample-phpmyadmin:
         image: phpmyadmin:5
         restart: always
         ports:
             - 8081:80
         environment:
             # - PMA_ARBITRARY=1
-            - PMA_HOST=mysql
+            - PMA_HOST=go-sample-mysql
             - PMA_USER=root
             - PMA_PASSWORD=password

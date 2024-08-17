@@ -4,6 +4,7 @@ images/sample_copy.png
 infrastructure/Config.go
 
 tmp/*
+app/tmp/*
 mysql
 
 !.gitkeep

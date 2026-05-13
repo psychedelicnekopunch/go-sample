@@ -54,7 +54,36 @@ func (r *Random) Get() string {
 }
 
 
+func (r *Random) Get2() string {
+
+	var source rand.Source
+	source = rand.NewSource(time.Now().UnixNano())
+
+	var str []rune
+	var cnt int
+	var res string
+
+	str = []rune(r.Value)
+	cnt = utf8.RuneCountInString(r.Value)
+
+	for i := 0; i < r.MaxRange; i++ {
+		if r.MinRange <= i {
+			if rand.New(source).Intn(r.MaxRange - r.MinRange) == 0 {
+				break
+			}
+		}
+		key := rand.New(source).Intn(cnt)
+		res = fmt.Sprintf("%s%c", res, str[key])
+	}
+	return fmt.Sprintf("%s.%d", res, time.Now().UnixNano())
+}
+
+
 func main() {
 	random := NewRandom()
 	fmt.Print(random.Get(), "\n")
+
+	random.MaxRange = 5
+	random.MinRange = 5
+	fmt.Print(random.Get2(), "\n")
 }

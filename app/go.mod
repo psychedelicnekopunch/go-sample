@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/360EntSecGroup-Skylar/excelize v1.4.1
 	github.com/aws/aws-sdk-go v1.19.18
+	github.com/bradfitz/gomemcache v0.0.0-20260422231931-4d751bb6e37c
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5 // indirect
 	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/jinzhu/gorm v1.9.4

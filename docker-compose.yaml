@@ -38,3 +38,9 @@ services:
             - PMA_HOST=go-sample-mysql
             - PMA_USER=root
             - PMA_PASSWORD=password
+    go-sample-memcached:
+        image: memcached:1.6.41
+        command:
+            - --conn-limit=1024
+            - --memory-limit=64
+            - --threads=4

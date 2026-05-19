@@ -45,9 +45,9 @@ services:
             - --memory-limit=64
             - --threads=4
     go-sample-redis:
-        image: redis:8.8-m03
-        # build:
-        #     context: .
-        #     dockerfile: ./redis/Dockerfile
-        # volumes:
-        #     - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+        # image: redis:8.8-m03
+        build:
+            context: .
+            dockerfile: ./redis/Dockerfile
+        volumes:
+            - ./redis/redis.conf:/usr/local/etc/redis/redis.conf

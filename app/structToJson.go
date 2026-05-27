@@ -17,7 +17,7 @@ func main() {
 	}
 
 
-	var Test2 struct {
+	var test2 struct {
 		ID int `json:"id"`
 		Title string `json:"title"`
 		OnSale bool `json:"onSale"`
@@ -37,6 +37,8 @@ func main() {
 	}
 	fmt.Printf("%s\n", string(b))//{"id":1,"title":"test","onSale":true}
 
+	j := `{"id":1,"title":"test","onSale":true}`
+
 	// Decode
 	docTest := Test{}
 	doc := json.NewDecoder(strings.NewReader(string(b)))
@@ -44,7 +46,7 @@ func main() {
 	fmt.Print(docTest, "\n")
 
 	// Decode2
-	doc2 := json.NewDecoder(strings.NewReader(string(b)))
-	doc2.Decode(&Test2)
-	fmt.Print(Test2, "\n")
+	doc2 := json.NewDecoder(strings.NewReader(j))
+	doc2.Decode(&test2)
+	fmt.Print(test2, "\n")
 }

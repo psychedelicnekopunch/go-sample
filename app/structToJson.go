@@ -35,7 +35,14 @@ func main() {
 		fmt.Printf("ERROR: %s\n", err.Error())
 		return
 	}
-	fmt.Printf("%s\n", string(b))//{"id":1,"title":"test","onSale":true}
+	fmt.Print(b, "\n")
+	// fmt.Printf("%s\n", b)
+	fmt.Print(string(b), "\n")//{"id":1,"title":"test","onSale":true}
+
+
+	for _, v := range b {
+		fmt.Print(string(v), " -> ", v, "\n")
+	}
 
 	j := `{"id":1,"title":"test","onSale":true}`
 

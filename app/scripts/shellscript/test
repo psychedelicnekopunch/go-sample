@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cd `dirname $0`
+d=`pwd`
+
+## AI による概要
+## source: not found エラーは、スクリプトの実行に sh が使われていることが原因です。source は bash の組み込みコマンドであり、標準の sh（Ubuntuなどの /bin/sh）には存在しません。
+
+## 解決方法
+## スクリプト内の source コマンドをドット . に変更する
+## （例: source ~/.bashrc を . ~/.bashrc にする）。
+
+## source: not found
+# source $d/config
+. $d/config
+
+echo "user: '"$USER"', password: '"$PASSWORD"'"

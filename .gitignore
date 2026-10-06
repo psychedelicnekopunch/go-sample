@@ -1,10 +1,11 @@
 .DS_Store
 
-images/sample_copy.png
+app/assets/img/sample_copy.png
 
-Config.go
+config.go
 
-tmp/*
+main
+
 app/tmp/*
 mysql
 

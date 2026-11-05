@@ -113,11 +113,11 @@ func NewAwsS3() *AwsS3 {
 			// 一度作成した Access key ID の Secret Access Key は csv ファイルでダウンロードしていない場合は、
 			// 確認する手段がないので新しくアクセスキーを作成する必要がある。
 			Credentials: credentials.NewStaticCredentialsFromCreds(credentials.Value{
-				AccessKeyID: config.Aws.S3.AccessKeyID,
-				SecretAccessKey: config.Aws.S3.SecretAccessKey,
+				AccessKeyID: config.AwsS3AccessKeyID,
+				SecretAccessKey: config.AwsS3SecretAccessKey,
 			}),
 			// アジアパシフィック (東京): ap-northeast-1
-			Region: aws.String(config.Aws.S3.Region),
+			Region: aws.String(config.AwsS3Region),
 		},
 	}))
 
@@ -201,7 +201,7 @@ func (a *AwsS3) UploadTest(file multipart.File, fileName string, extension strin
 		// ACL の設定は重要
 		ACL: aws.String("public-read"),
 		Body: file,
-		Bucket: aws.String(a.Config.Aws.S3.Bucket),
+		Bucket: aws.String(a.Config.AwsS3Bucket),
 		// content-type の設定も忘れずに
 		ContentType: aws.String(contentType),
 		Key: aws.String(a.Keys.Test + "/" + fileName + "." + extension),

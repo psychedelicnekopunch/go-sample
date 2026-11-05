@@ -24,7 +24,7 @@ func NewSlack() *Slack {
 func newSlack(c *Config) *Slack {
 
 	s := &Slack{
-		Connection: slack.New(c.Slack.APIToken),
+		Connection: slack.New(c.SlackAPIToken),
 	}
 
 	s.Channels.Test = "bot_test"

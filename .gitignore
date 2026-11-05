@@ -1,8 +1,8 @@
 .DS_Store
 
-app/assets/img/sample_copy.png
+.env
 
-config.go
+app/assets/img/sample_copy.png
 
 main
 

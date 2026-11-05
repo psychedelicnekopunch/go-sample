@@ -1,0 +1,3 @@
+export SAMPLE_TEST=test
+export SAMPLE_ECHOHELLO=World
+# export SAMPLE_ERRORTEST=error/err:eeeeee

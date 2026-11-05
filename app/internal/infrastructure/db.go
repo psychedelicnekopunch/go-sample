@@ -20,10 +20,10 @@ type DB struct {
 func NewDB() *DB {
 	c := NewConfig()
 	return newDB(&DB{
-		Host: c.DB.Production.Host,
-		Username: c.DB.Production.Username,
-		Password: c.DB.Production.Password,
-		DBName: c.DB.Production.DBName,
+		Host: c.DBProductionHost,
+		Username: c.DBProductionUsername,
+		Password: c.DBProductionPassword,
+		DBName: c.DBProductionDBName,
 	})
 }
 
